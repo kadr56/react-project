@@ -19,17 +19,27 @@ import { Link, Routes, Route } from "react-router-dom";
 import Signup from "./Signup";
 import NotFound from "./NotFound";
 import { ToastContainer, toast } from "react-toastify";
+import fetchPopularCategory from "../services/fetchPopularCategory";
+import { useEffect } from "react";
+const POPULAR_URL = `http://localhost:8080/api/popular`
+
 
 function Home({ wishlist, setWishlist, basket, setBasket }) {
     //   const [wishlist, setWishlist] = useState([]);
     //   const [basket, setBasket] = useState([]);
     const [show, setShow] = useState(false);
+    const [popularCategory, setPopularCategory] = useState([])
+
+    useEffect(()=> {
+        fetchPopularCategory(POPULAR_URL, setPopularCategory);
+    }, []);
+
 
     const images = carouselData.map((data) => {
         return <img src={data.url} className={data.style} />;
     });
 
-    const popProducts = popProductsData.map((data) => {
+    const popProducts = popularCategory.map((data) => {
         return (
             <button
                 type="button"
