@@ -13,7 +13,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { fetchPopularCategory, fetchProducts } from "../services/fetchData";
 const POPULAR_URL = "http://localhost:8080/api/popular";
-const PRODUCT_URL = "http://localhost:8080/api/products";
+const PRODUCT_URL = "http://localhost:8080/api/search";
 
 function Home({ wishlist, setWishlist, basket, setBasket }) {
   //   const [wishlist, setWishlist] = useState([]);
@@ -125,23 +125,23 @@ function Home({ wishlist, setWishlist, basket, setBasket }) {
           <Category />
         </div>
 
-        <div className="container">
+        {/* <div className="container">
           <div className="product-cards-container row btn-container d-flex justify-content-between mb-4 mt-5">
             <p className="col-3 header">Popular products</p>
             <div className="col-7 d-flex justify-content-end">
               {popProducts}
             </div>
           </div>
-        </div>
+        </div> */}
 
         <AliceCarousel autoPlay autoPlayInterval="8000" disableButtonsControls>
           <div className="product-cards-container">{populateProduct(0, 7)}</div>
-          <div className="product-cards-container">
+          {/* <div className="product-cards-container">
             {populateProduct(8, 15)}
-          </div>
+          </div> */}
         </AliceCarousel>
 
-        <Poster />
+        {/* <Poster /> */}
 
         <div className="product-cards-container part2">{productsPart2}</div>
 

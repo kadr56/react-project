@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import CallService from "./components/CallService";
 import MainMenu from "./components/MainMenu";
 import SearchBar from "./components/SearchBar";
+import Search from "./components/Search";
 import { useState } from "react";
 import ProductDetails from "./components/ProductDetails";
 import Cart from "./components/Cart";
@@ -41,17 +42,23 @@ function App() {
             }
           ></Route>
           <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/search?keyword=" element={<Search />}></Route>
+
           <Route
             path="/productDetails/:id"
-            element={<ProductDetails
-              wishlist={wishlist}
-              setWishlist={setWishlist}
-              basket={basket}
-              setBasket={setBasket} />}
+            element={
+              <ProductDetails
+                wishlist={wishlist}
+                setWishlist={setWishlist}
+                basket={basket}
+                setBasket={setBasket}
+              />
+            }
           ></Route>
-          <Route path="/cart" element={<Cart
-            basket={basket}
-            setBasket={setBasket} />}></Route>
+          <Route
+            path="/cart"
+            element={<Cart basket={basket} setBasket={setBasket} />}
+          ></Route>
         </Routes>
       </div>
     </div>
