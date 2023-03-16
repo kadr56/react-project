@@ -1,0 +1,27 @@
+###
+GET http://localhost:8009/menu/all HTTP/1.1
+Content-Type: application/json
+
+
+###
+
+POST http://localhost:8009/menu/add HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Browse Categories",
+    "postition": "1",
+    "children": [
+        {
+            "title" : "Category1",
+            "position": 1
+        },
+        {
+            "title" : "Category2",
+            "position": 2
+        }
+    ]
+}
+
+
+###

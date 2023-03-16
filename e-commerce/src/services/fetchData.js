@@ -9,4 +9,9 @@ async function fetchProducts(url, setProducts) {
   const result = await axios.get(url);
   setProducts(result.data);
 }
-export { fetchPopularCategory, fetchProducts };
+
+async function fetchMenu(url, setMenus) {
+  const result = await axios.get(url);
+  setMenus(result.data);
+}
+export { fetchPopularCategory, fetchProducts, fetchMenu };
