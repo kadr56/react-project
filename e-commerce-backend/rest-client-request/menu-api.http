@@ -1,0 +1,28 @@
+GET http://localhost:8081/menu/all HTTP/1.1
+Content-Type: application/json
+
+###
+
+POST http://localhost:8081/menu/add HTTP/1.1
+Content-Type: application/json
+
+{
+    "title" : "Pages",
+    "position" : "4",
+    "children" : [
+        {
+            "title" : "Pages1",
+            "position" : 1
+        },
+        {
+            "title" : "Pages2",
+            "position" : 2
+        },
+        {
+            "title" : "Pages3",
+            "position" : 3
+        }
+    ]
+}
+
+###
